@@ -1,57 +1,134 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Best by xiayuyingyun</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Best</h1>
-      <h2 class="project-tagline"></h2>
-      <a href="https://github.com/xiayuyingyun/best" class="btn">View on GitHub</a>
-      <a href="https://github.com/xiayuyingyun/best/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/xiayuyingyun/best/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>遇见最好的自己</title>
+<meta name="description" content="jquery图片幻灯片制作电子相册，jQuery带有翻页效果的图片电子书。支持收藏，翻页功能的电子相册。jQuery下载。" />
+</head>
+<style>
+	p{
+		text-indent:2em;
+	}
+</style>
+<body>
 
-    <section class="main-content">
-      <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+<link type="text/css" href="css/book.css" rel="stylesheet" />
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
+<div id="book" style="margin:0 auto;">
 
-<h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Designer Templates</h3>
+	<div class="arrow" style="left: -27px;">
+		<div class="mask"></div>
+		<div class="al" title="上一页"></div>
+	</div>
 
-<p>We’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.</p>
+	<div id="flip">
+		<div class="container">
+			<div class="label"></div>
+			<div class="content"></div>
+			<div class="pager"></div>
+		</div>
+		<div class="overlayer ie_l"><img src="images/flip_r.png" width="100%" height="627" /></div>
+	</div>
+	
+	<div id="left">
+		<div class="label"><a id="btn_fav" href="#" title="遇见最好的自己" tag="遇见">
+			<img src="images/favourite.jpg" />收藏</a><img src="images/vertical.jpg"/>
+			<a id="btn_down" href="#" target="_blank">
+				<img src="images/download.jpg" />下载</a></div>
+		<div class="content">
+			<div class="default"><img alt="" src="images/about.jpg" height="441" width="277"><p align="center"></p></div>
+		</div>
+		<div class="pager"></div>
+	</div>
+	
+	<div id="right">
+	
+		<div class="label">遇见最好的自己<span>2016.09.02 第八十二期</span></div>
+	
+		<div class="content">
+			<div class="default"><img src="images/taojiefm2.jpg" style="cursor:pointer;" onclick="$('#book .arrow .ar').click();"/></div>
+		</div>
+		<div class="glide">
+			<div style="left: 50%;"></div>
+		</div>
+	
+	</div>
+	
+	<div id="foot"></div>
 
-<h3>
-<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating pages manually</h3>
+	<div class="arrow" style="left:965px;">
+		<div class="mask"></div>
+		<div class="ar" title="下一页"></div>
+	</div>
+	
+</div>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/jqueryui-1.8.min.js"></script>
+<script type="text/javascript" src="js/book.js"></script>
+<script type="text/javascript">
+var page_content = [
+'<div class="default"><img alt="" src="./images/about.jpg" height="441" width="277"></a><p align="center"></a></div>',
+'<div class="default"><img src="./images/taojiefm2.jpg" style="cursor:pointer;" onclick="$(\'#book .arrow .ar\').click();"/></div>',
+	'<p class="title">任叶飘落，拣拾落叶</p><p class="title"><img alt="" src="./images/r1.jpg"/><br></p><p> 翻开微微发黄的笔记本，一枚一枚的叶子，连同我当时的梦想珍藏在书页里，也珍藏在我心中。览叶读文，我总会忆起曾经的自己，曾经的脚印。而二十已过，回忆那与叶片相联的梦想，我明白自己在追梦的过程中，获益许多，失落也许多，得与失间，留存酸甜苦辣也说不清。能说清的，只是生命是一路追着梦走到而今，也将继续追梦下去。</p><p>霞辉熠动的林道间，不时有叶儿飘零着。走在其中，静心聆听叶落的声音，心情怅然中裹着一份宁静。随后拣拾一枚叶子，驻足而凝望间，仿</p>',
+	'佛又看到那些曾经的往事……<p>那枚叶从绿到红，从红到黄，再落下，直到现在被我拾在手中，整个过程我都很清楚。再一次把一枚叶放入这个笔记本里，每一枚叶都有我不同的追求，不同的心情。也许有些不曾是落叶，只是我自己从枝丫上择取下来的而已。它们来自不同的树，不同地方，不同时节。</p><p>也许我总会忧伤过去，也许会因物思人。看到满地的落叶，更是无尽的遐想，忧伤难免。手捧着末日之秋的这枚落叶，沐浴着黄昏凄美的柔光，我的心情很复杂。我想写文章，可是没有机会完满地倾诉我的复杂情感历程。想让那随风而流逝的梦飘零永远，伴随时光淡别我的记忆；让那些延续的梦，在我苦心的经营中，化为现实……</p><p>夕霞袅娜，像我飘冉的思绪，拢不来，抖不掉。平静地，我托起掌心的落叶，任它随风去，飘向天边的彤云。往者去矣，未来在即，末日年的这枚叶子，驼载着我沉沉的心事，我将它奉为我所有的往事和流向未来的梦。我相信，过去总是历史，未来总有希望……</p>',
 
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+	'<p class="title" style="font-size: 20px">那些年，写在青春里的永远</p><p align="center"><img src="images/n1.jpg "><br></p><p>“青春”这两个字总是在我脑海中反复出现。渐去渐远的青春，不曾记得有多少艰难、困苦。我也不知道时光是否在你们脸上刻下道道皱纹？犹如把生命的档案细细描画，海枯、石烂、日转、星移……生命的航船从古不息地向前进发。</p><p> 似水流年，翻开发黄的书页。曾经的点点滴滴已如同血液渗入生命里，和着生命一起奔流，流在了青春的痕迹里，弥漫在心间的纹路中。当</p>',
+	'我再次回望那些年我们走过的青春，左岸右我无法忘却的回忆，右岸是我值得紧握的璀璨年华，中间飞快流淌的我年年岁岁淡淡的忧伤。<p> 流逝的日子就像一片片凋零的枯叶与花瓣，渐去渐远的是青春的纯情与浪漫。也许我们都不记得那些年做过多少傻事、微笑了多少次、流了多少泪；也不记得有多少雨飘在胸前，风响在耳畔，只知道沧桑早已漫进了我们的心，爬上了我们的脸。</p><p>随着时光的流逝，岁月的洗涤，将心灵的尘埃清洗干净，才会还原真心的本色。也许青春如同一场盛大而华丽的戏，我们每个人有着不同的假面，扮演者不同的角色，演绎着不同的经历，却有着相同的悲哀，就是青春太短暂。</p><p>青春是一本太仓促的书。走着走着，就散了，回忆都淡了；看着看着，就累了，星光也暗了；听着听着就醒了，开始埋怨了。回头发现，你不见了，突然就乱了，笑了，痛了，哭了，疯了，青春就是这样离奇。</p><p>那些年流逝的很快很快，期间的花开花谢，让我疲惫却让我无怨；四季的雨雪飘飞，让我心醉却不甚憔悴；轻轻的风，轻轻的梦，轻轻的晨晨昏昏；淡淡的云，淡淡的泪，淡淡的年年岁岁……</p><p> 回忆就像一栋拥有很多窗户的楼房，有的窗户晒着冬日的被褥，一拍就是一片尘埃；回忆太近，离自由太远，有时候念念不忘，只是爱上回忆，不管是尘埃，还是芬芳，我喜欢去回忆我的青春。</p><p>当青春散场，我们被无法预知的时光推移着背道而愈驰愈远，那段曾</p>',
+	'经一同走过的青春岁月却变成夏日夜空中闪烁群星里最亮的那颗。那些年，写在青春里的永远。青春不会永垂不朽，青春只是用来怀念的。<br><p  style="right: 0;float: right">2013年05月22日</p>',
 
-<p>You can @mention a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+	'<p class="title">面向太阳，不问春暖花开</p><p class="title"><img alt="" src="./images/m1.jpg"/><br></p><p>人来到这世上，总会有许多的不如意，也会有许多的不公平；会有许多的失落，也会有许多的羡慕。卞之琳说：你站在桥上看风景，看风景的人在楼上看你。</p><p>是的，走在生活的风雨旅程中，当你羡慕别人住着高楼大厦时，也许瑟缩在墙角的人，正羡慕你有一座能够遮风的草屋；当你羡慕别人坐在豪华车里，而失意于自己在地上行走时，也许躺在病床上的人，正羡慕你还能够自由行走……</p><p>有很多时候，我们往往不知道，自己在欣赏别人的时候，自己也成了别人眼中的风景。你羡慕我的自由，我羡慕你的约束；你羡慕我的车，我羡慕你的房；你羡慕我的工作，我羡慕你每一天总有休息时刻。</p>',
+	'<p>或许，我们都是远视眼，总是活在对别人的仰视里；或许，我们都是近视眼，往往忽略了身边的幸福。事实上，大千世界，不会有两张一模一样的面孔，只要你仔细观察，总会有细微的差别。同是走兽，兔子娇小而青牛高大；同是飞禽，雄鹰高飞而紫燕低回。</p><p>人，总会有智力、运气的差别；总会受环境、现实的约束；总会有人在你切一盘水果时，秒杀一道数学题；总会有人在你熟睡时，回想一天的得失；总会有人比你跑的快……参差不齐，才构成了这世界上一道道亮丽的风景。</p><p>事实上，人生如一本厚重的书，有些书是没有主角的，正因我们忽视了自我；有些书是没有线索的，正因我们迷失了自我；有些书是没有资料的，正因我们埋没了自我……一生辗转千万里，莫问成败重几许，得之坦然，失之淡然，与其在别人的辉煌里仰望，不如亲手点亮自己的心灯，扬帆远航，把握最真实的自己，才会更深刻地解读自己……</p><p>如若能够，面向太阳吧，不问春暖花开，只求快乐应对。透过洒满阳光的玻璃窗，蓦然回首，你何尝不是别人眼中的风景？</p>',
 
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
+	'<p class="title" >踩在青春的尾巴上</p><p><img align="left" class="i_1" alt="" src="#"/>秋天本是个伤感的季节！如果穿过黄叶飘落的林荫小路，来到一望无际的田野上，会伴着阵阵的秋风，也许收割后的田地空旷而又壮阔，松软而又无际，一切都会是那么的空荡荡，阵阵的秋风袭来，相信你远望着家乡心生寂寥，蓝天白云衬托着远山如黛，如诗如画。在秋天无垠的旷野中，有沉重，有失落，还有一点凄凉。男思春，女悲秋。在这个下雨天，也已在这青春的尾巴上，我怎能不伤感叹息？</p><p>青春的纯情与浪漫也许在离我们渐行渐远，已不记得有多少雨飘在胸前，风响在耳畔。有时仔细听着钟表清脆的金属声敲击着时光的点点滴滴，一分一秒的年华，在生命中不经意间悄然流走。感觉青春就像手纸，用着用着就没了。</p><p>在青春里，在大学时光里。一些人，若风，来了，走了；一些事，如云，卷了，舒了。流年，剪影；失望，期望。人生，总有一些说不出的秘密，在心；生活，总有一些挽不回的遗憾，如烟。生命中令人回眸的空白，也许心里，让你牵挂，却不能相守；让你羡慕，却不能拥有。人生，原本就是一场得到与失去。累了，让心吹吹风；痛了，让脚步停一停。</p><p>也许每个人心底都有那么一个人，已不是恋人，也成不了朋友。 时间过去，无关乎喜不喜欢，总会很习惯的想起，然后希望那个人一切都好。有些人，注定是生命中的过客；有些事，常常让我们很无奈。别等</p>',
 
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/xiayuyingyun/best">Best</a> is maintained by <a href="https://github.com/xiayuyingyun">xiayuyingyun</a>.</span>
+'不该等的人，别伤不该伤的心。孤独，不一定不快乐；得到，不一定能长久；失去，不一定不再拥有。爱的时候，让他自由；不爱的时候，就让爱自由。<p>你要相信，总有一天，会有一个人，看你写过的所有状态，读你写过的所有微博，看你从小到大的所有照片，试着听你听的歌，走你走过的地方，看你喜欢看的书，品尝你总是大呼好吃的东西……只是想弥补上，你的青春??TA迟到的时光。</p><p>在青春岁月里，也有那么个人， 即使不见面，不说话，不发信息，心里总会留一个位置，安安稳稳的放着一个人。那个人就是你的死党。也许你伤心她只需要你的一个语气，一句话就知道你怎么了。根据你的一个眼神，你的一个动作就懂了你的一切。但也许有人因为一句话，一件事，就从你的生命中消失了。从此陌路。</p><p>过去没有谁对谁错。时间也就在我们耿耿于怀地说别人变了的时候，悄悄地将我们自己也改变了。这些年渐渐的明白了，最在乎的那个人，往往是最容易让你流泪的，渐渐的明白了，很多爱情是可遇而不可求的，渐渐的明白了，很多东西只能拥有一次，放手了也就意味着失去了，渐渐的明白了，真心对一个人是不需要回报的。无论是爱情还是友情，亦或亲情。常常觉得是时光辜负了你我，其实是你我辜负了最美的青春时光。</p><p>大学 这些年，我都已逐渐学会接受，接受意外，接受变节，接受误解，接受努力了却得不到回报，接受世界的残忍和人性的残缺。但这不代</p>',
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
+'表我妥协，我还应去努力，去爱，去为遥不可及的一切付出心血。不患得患失，不怕翻脸，不惯着任何人，亦不做亏心事。朝着这个目标前行。因为，我还相信梦想，相信奇迹 ！<p>我们终于不懵懂，毕竟时间教会了我们很多。时间在变，人也在变。生命是一场无法回放的绝版电影，有些事不管你如何努力，回不去就是回不去了。就算真的回去了，你也会发现,一切已经面目全非。唯一能回去的，只是存于心底的记忆。好好珍惜，能在一起不容易，别给人生留下遗憾。世界上最远的距离，不是爱，不是恨，而是熟悉的人，渐渐变得陌生。我本是一个理性的人，可是理性中更多的是感性。从来不希望我认识的人中有那么一个人可以彻彻底底的从我生命中消失。至少曾出现在我生命中的人，在某个时间某个地点我会想起某个人。</p><p>多想， 如果，时光未老， 我愿执一枚岁月的素笺，将时光折叠，将心事轻盈，聆听美好，捡拾快乐，感悟幸福。伴一路风雨，踏光阴而浅行，把安然妥帖成细水长流，如一棵小草，依阳光生长；如一朵花，绽放在时光里；如云朵一样轻盈飘逸，俯看人间过往。</p><p>我想青春，其实应该像是春天里的蒲公英，即使力气单薄、个头又小、还没有能力长出飞天的翅膀，藉着风力也要吹向远方；哪怕是飘落在你所不知道的地方，也要去闯一闯未开垦的地。这样，你才会知道世界不再只是一扇好看的玻璃窗，你才会看见眼前不再只是一堵堵心的墙。不忘初心，方得始终。只有走过弯路，才更确信当初最想要的是什么。</p>',
 
-    </section>
+'<p>已在青春尾巴上了，我们终于长大，也就意识到了，这个世界也许不会像我们小时候想象的那么美好，我们爱着的人，我们在意的事情，也许会欺骗我们，也许会离开，终于知道了长大并不是那么的美好，也不是那么的自由，总有些东西会绊住我们前进的双脚。踩在青春的尾巴上，总想留住些什么，总想抓住些什么，可是无论我怎样，要留下的还是会留下，要走的还是会走，不是我的终究会离开。</p><p>大学时光既有酸甜，也有苦辣。你是否还记得，在你去洗澡后，出澡堂时，天上下起了瓢泼大雨，是谁给你送去的伞？在你生病时，是谁陪你去的医院？谁在你肚子痛时，给你送上一杯开水？谁在你不想去食堂时，冒着凛冽的寒风给你带饭？在你不开心、烦躁时，是谁陪你去逛操场，陪你出去走走，给你讲笑话？在你想家时，谁给你拥抱？说，随时来我家吧，我家就是你家。是谁...？...是谁...？感谢你的死党和室友，还有关心你的所有人吧！</p><p>真的到毕业那一刻我们会发现，我们的青春真的结束了。好好的珍惜现在的生活，好好把握剩下为数不多的上课时间，珍惜剩下几个月的同学情，几月后就是各奔前程，我在天南，你可能在地北。抽个时间，再一起去教室上上自习、再一起去食堂吃饭、然后在饭后去校园逛逛、周末时全寝室再去逛逛街，晚上再天南地北的闲聊......</p><p>时光已然，不知道你是否觉得一转眼即将各奔东西？大学时光匆匆，四年说长不长，说短不短。在大学我们有人收获了爱情，有人收获了亲</p>',
 
-  
-  </body>
+
+'有人收获了知识，有人收获了人脉......总之，我们都有自己的收获。指缝太宽，时光太瘦。蓦然回首，惊觉岁月忽已晚。已在青春的尾巴上，那些不忍放手的，念念不忘的，最终都定格成了风景。 学会放手吧，既然青春留不住，那我们就好好珍惜余下的青春时光吧！',
+
+'<p class="title">生活觅处搁一丝宁静在角落</p><p>曾经向往诗人般笔尖的唯美与安宁，曾经向往羽扇纶巾般的洒脱与豪气，曾经向往滴水般的执着与坚毅。</p>  <p>生活如画，处处诗情画意，却又处处失意。那些为梦想奋斗的勇士，却在执着的守护着、创造着那些属于自己的幸福。平平仄仄，仄仄平平，跌跌起伏的旋律，奔波的生活总是在忙忙碌碌中结束。唯美的、安宁的、勤奋的、执着的......，终究摆脱不了被搁浅的命运。</p> <p>生活犹如五彩斑斓的画笔在为各式各样的人涂鸦，红的、紫的、绿的，蓝的......，那些不起眼的小人物只能沦落为黑色幽默，在红尘世俗中诙谐，艰难的活着，并且他们的颜色是那样单薄，稍遇风雨他们就会凋落得斑驳不堪。</p><p>麻木的神经在未知的梦想里泛不起任何涟漪，只是被现实的生活一次次的刺痛着。总喜欢在夜静的晚上细数着自己的青春，自己的梦。那被浅墨渲染的人生如画，却不知道何时模糊了字眼，更不知道何时那画面早已被泪水冲刷得支离破碎。</p> <p>总喜欢在云淡风轻的日子里写一些风轻云淡的文字，寻流水的声响，觅风儿于温情的记忆，在喧嚣的俗世觅一处角落还自己一丝宁静也好。</p>',
+
+'<p class="title" style="font-size: 20px">日月如梭韶华逝，愿你成为自己的太阳</p>  <p>指缝太宽，时光太瘦，蓦然回首，惊觉岁月忽已晚。面对着这已过去的2015，我想到了很多，但好像什么也没想到；我错过了很多，但我也遇见了很多；失去了一些东西，但得到了另外一些。有人离去，有人来到。得与失，错与对。世间有许多事物都是自相矛盾的，正因为有了矛盾，才会得以平衡。二十余载的光阴已过去，意味着你已平安度过一生的约8400个日日夜夜。</p> <p>人生匆匆，虽说朝看青丝暮成雪，但时光匆匆谁也无法挽留，回首过去所经历的也不过是一场过眼云烟。在这北方，春有百花秋有月，夏有凉风冬有雪。前世的五百次回眸换来今世的一次擦肩而过，于千万人之中你会遇见很多人，我想无论你遇见谁，他都是你生命该出现的人，绝非偶然，他一定会教会你一些什么？我深信不疑我所遇见的每一个人都教会了我不一样的东西。</p><p>这一年发生的一切也许都是命中注定，也是理所当然的会发生。不论我如何努力地想要改变，那些念念不忘的，最终都定格成了风景。曾经有时很不想告诉别人这些的，也不想再提及有些伤痛的，现在都看淡了。是他们，是那些人，是那些事让我成长了。我现在能选择的就是活在当下，珍惜现在。我一直相信，所有的路，都会把带我带去最美丽的地方。我想成为自己的太阳。</p>',
+
+
+'<p>15年我失去了某个人了，可是我成长了。曾有那么些时候我有怨恨,有那么些时光去抱怨过有些东西，也有那么一段时间愁眉苦脸，总有那么些事，那么些人让我不爽。后来我渐渐看淡了，我花时间去计较让我不爽的事情，我就少了时间去体验让我开心的事情。其实所有的恨、烦、焦虑、难过都是别人带来的，可是时间是我的。所以我懂了节约自己的时间比一切都重要。 </p><p>时间是世界上一切事物的良药，我们会在时光里遇见某些人，也会随着时光的流逝淡忘某些人。一直在回忆，一直在忘记，可是或许有些人，有些事还是记忆犹新。有些时候就是怕什么就会想到什么，信什么就会听到什么，让我们恐惧的，不是外面的世界，而是我们的内心。于是我终于学会了放下，学会了看淡。我想成为自己的太阳。</p> <p>清晰的记得11月23日夜晚下起了2015年的第一场雪，也是我这些年见过的最大的一次雪。早上醒来在阳台上，看着窗外雪花飘飘悠悠，轻轻盈盈，纷纷扬扬地从天空飘下来，眨眼望去，大地已经是银装素裹。我迅速洗漱完毕，跑下楼，专门走了一条人少的路走，走在雪地里，咯吱咯吱地作响，但是感觉软软的，很美好。雪天世界显得那么地寂静，用手捧一把雪，轻轻巧巧的凉，浸透在那季节的神经末梢，蔓延着简约的美好。</p> <p>以前一直以来都是那个不被别人懂的人，而且遇到什么事都是放在心里。不给他人说，即使想要告诉他乡的朋友，可是他们离我太遥远，只能听我说说而已，不知道我所处环境，到底是什么情况。想帮忙，也不知道</p>',
+
+'如何帮起。一直以来我觉得自己从不需要所谓的安全感，直到失去某人后，发现自己也缺乏安全感。不论我内心多么强大，可是毕竟我只是一个小女子。想想这一年我也是折腾够了。 <p>给了自己一场又一场说走就走的旅行，自己想去的地方，即使没有人陪伴，也要去，这就是我的执着。不害怕，不畏惧，只有如此，自己方可变得愈加强大。在旅途里我用心的去记录了旅行中的点点滴滴，独自旅行也教会了我很多东西。经历真的是很一大笔财富。我想成为自己的太阳。</p> <p>这一年自己一个人去了好几个地方，4月23日坐了8小时夜车去北京，一夜未合眼。7月20日坐了5小时火车去武汉，10月3日独自又买了清早的城际列车去开封。自己一个人在龙亭，中国翰园逛了一天，晚上又坐城际列车回郑州，清晰的记得回来时提前了两小时出发，结果路上太堵差点没坐上车，那次真是下了公交车一路狂奔啊，第一次差点没有坐上回程车。12月26日那天是考研，自己心里很难受，买了方特的夜场票，自己一个人在方特玩到了9点左右坐公交回学校，那天晚上感觉自己都快被冻傻了。</p>  <p>15年养成了早起的习惯，从8月11日起每天快6点时起床，基本6点准时在空间发表励志的话语。我曾经是一个很自卑，很多愁善感的女生。从暑假开始后，我想通了很多事，学会了释然。曾经有人告诉我看了我曾经写的一些东西会有流泪的感觉，我以前的同学也有些许人告诉过我，说我写的东西太过于悲伤，我下定了决心要改掉这个习惯。我不能再给我的好友带来负能量，而应该带给他们的是正能量。于是我每天早起是一种正能</p>',
+
+'量，再加上发的励志的话语。我希望自己可以影响到别人，要是好的影响。愿你们也成为自己的太阳！ <p>我喜欢清早独自去三食堂的路上，因为太阳从东方升起，我刚好和太阳是迎面，看见阳光透过稠密的树叶洒落到地上，成了点点金色的光斑。感受到阳光的温暖，我有了信心，那璀璨绚丽的光芒，使我懂得生命需要坚强。那扑面而来的阳光，会让我把昨日的几多烦恼遗忘，预示着，新的一天，新的起点，我需要用快乐和感恩之心去开始这新的一天。愿我能成为自己的阳光！</p> <p>经历了太多总会有些疲惫。每到夜晚时总是喜欢站在阳台上，看着远处一栋楼，有时晚了，灯已经关了，早了还没打开。经过一段时间后，我基本知道它几点打开，几点关灯了，看了那里1年半了。喜欢看着那里想一些东西。我没想要自己变得特别强大，恰到好处就行。我希望自己成为那种姑娘，不管经历过多少不平，有过多少伤痛，都能舒展着眉头过日子，内心丰盛安宁，性格澄澈豁达，偶尔可以矫情却不矫揉造作，不怨天尤人，不苦大仇深。对每个人真诚，对每件事热忱，相信这世上的一切都会慢慢好起来。愿你我可以成为自己的太阳！</p> <p>我们总是在知道回不去的时候才最想回去，总是在结束的时候才想起怎么开始，我们一直都在错过，在忆昔。马上即将毕业，在未来这些时光，我应该去珍惜这即将结束的大学生活。过去已经回不去。或许，只有历经世事，方才明白，我们眼前所拥有的，才是真正应该珍惜的。因为：</p> ',
+
+
+'远处是风景，近处才是人生。我希望你我都能成为自己的太阳！2015再见！<br><p  style="right: 0;float: right">2016年01月01日</p>',
+
+
+
+
+
+
+'<p class="title">南柯一梦</p><p class="title"><img alt="" src="./images/nk1.jpg"/><br></p><p align="center">悠悠浮云，万里苍茫，何处觅清音？</p><p align="center">梦里几度凭栏望，高楼独倚，孤身望星…</p><p align="center">东风未落，扶摇上九天，欲唤大鹏起舞，敢叫仙女坠凡尘</p><p align="center">怅美景如此，应是南柯一梦</p><p align="center">残云堕泪，碧树凋霜，几世相望</p> <p align="center">今生未敢奢求，何处徘徊，无限惆怅</p><p align="center">待长刀划破苍穹，此生无伴？？？</p><p align="center">孤影无助，天涯何处长…</p><br><p  style="right: 0;float: right">2013年04月</p>',
+
+
+
+	'<p class="title">无论天气多么坏，记得带上你自己的阳光</p><p class="title"><img alt="" src="./images/y1.jpg"/><br></p><p>“无论你走到哪里，无论天气多么坏，记得带上你自己的阳光。”这句话不仅富有哲理，我觉得更是振聋发聩的人生座右铭。</p><p>带上自己的阳光，是一种豁达，澄澈透明，洁净无瑕敞亮的心态。说到底，人最终能够安然栖居的，是自己的心灵。心里充满阳光，纯洁的心犹如一滴清水，无论外界如何烟雨迷蒙，然我清者自清，那滴绝无污染的清水是一种精神，一种信念，令这滴水始终清凛，始终纯美。</p><p>生命是一场漫长的旅程，生活本身就是一种承受，承受痛苦，承受幸福，承受平淡，承受孤独，承受失败，承受责任，承受爱，付出爱。</p><p>当一切都可以看开时，往往也就没有什么是想不开的了，没有什么是</p>',
+'不可以失去的时候。包括金钱、权力、名誉、地位、爱情、事业，甚至生命的本身。这一切的拥有和失去，不是以自己的意志所主宰的，得之我所珍惜，失之那就坦然面对吧。<p>人生有好多无奈，当自己改变不了环境时，可以学着悄悄改变自己;当改变不了现实时，可以试试改变态度;当自己改变不了过去时，可以用改变现在来证明自己;我们不能预知明天，但可以把握今天。</p><p>带上自己的阳光，是一种智慧，一种超脱的情怀。快乐幸福纵没有标准，完全取决于人的心态，认为自己是最倒霉的，那是你在自己的雨季里只看到别人天空的太阳，却没有看到自己步行淋雨的后面还有一方晴空;认为自己是最幸运的，那是因为真正的不幸还没来得及登门拜访。幸或不幸都要头脑清醒，不要迷失，失去自我定力。</p><p>别在不幸中让仇恨的欲望占有生命，否则，你的心里永远不会平衡;当幸运降临到你头上时，也别拿自己的优越感沾沾自喜，否则，懒惰自满会在你得意忘形中滋生。祸福相依，正所谓塞翁失马焉知祸福，就是这个道理。</p><p>只要心里有阳光，身处逆境也不会绝望，默默吞下所有的疼痛，用倔犟的笑容打败悲伤。</p><p>生活本来不容易，为人都很辛苦，身居庙堂之上高楼大厦也有泪水，茅屋草房走夫贩卒穷家寒舍也有笑语。富有的人不一定就快乐，贫穷的人未必就痛苦，只要心中有阳光，三九严寒喝口凉水也甘甜。</p>',
+'<p class="title"><img alt="" src="./images/y2.jpg"/><br><p>带上自己的阳光，做真实的自己，不以物喜，不以己悲，真诚坦荡生活每一天。流水人生转瞬即逝，每一天我们都像蝼蚁一样在忙碌，被生活压顶。为名忙，为利忙，忙忙碌碌何时休，多少前缘成了过往，其实抓不住的是潺潺时光。</p><p>生命本身其实是纯粹而干净的，而我们成长的过程中渐渐地沾染了太多的粉尘，每一个人的人生旅途中，都有许多不可避免的遭遇，或勇于面对，或仓皇逃离，全在自己的选择。无论是强者还是弱者，只要活在这尘世里，谁也无法逃离爱恨情仇的纠结;微笑着、忧伤着、快乐着，也疼痛着，这就是多味人生。</p><p>每一个人都要经历生老病死，同样会有悲欢离合，每一个人或享福或受罪，走在各自不同的人生路上，到最后都是走向同一个归宿，无论你是犹豫不决，还是义无反顾，都要走到生命的尽头。世间的事，从来都是</p>',
+'有得有失，你以拥有了太阳，却不知早已丢失了明澈的月亮。<p>带上自己的阳光，温暖脆弱的心灵。人不仅要梦见黄金，还要梦见天堂!在梦里不管韶光是否如云烟过隙，不管流年是否如滔滔春水一去不回，依然一片光明，处处鸟语花香。</p><p>那些有恻隐之心的人，内心慈悲善良的人，是一处磁场，让所有与之相处的人，都能安定而平静，慈悲是一种力量，可以拯救许多沉沦在罪恶中的人。同样也会感染许多在尘世迷惘的人。倘若每个人都在心中种植一株莲，那么也就把慈悲一起种下。你只要用阳光和雨露将之浇灌，用善良和温情将其滋养，就会绽放出洁净的花朵。</p><p>带上自己的阳光，照亮自己的心灵。心灵的力量是无穷的，它可以把一朵花变成一座花园，也可以把一滴水变成清泉。幸福其实就是一种心境，所谓“人生由我不由天，幸福由心不由境”，只要你心中有阳光，无论走到哪里，无论发生任何事情，你都会觉得是幸福的。</p>',
+
+//最后一页
+'<div class="bookshow" style="font-size: 26px;color: #90148c"><p align="center">"我还那么年轻，</p><p align="center">不够好又有什么关系"，</p><p align="center">我能够越变越好，</p><p align="center">不就可以了吗？</p><p align="center">只要你一直在努力，</p><p align="center">让自己变得更好，</p><p align="center">就千万别太着急，</p><p align="center">别太勉强为难自己。</p><p align="center">当你自己足够好的时候，</p><p align="center">一切都会好起来的。</p><p align="center">前提是你要对自己</p><p align="center">会变得更好这件事，</p><p align="center">深信不疑。</p><p align="center">不管你信不，</p><p align="center">反正我信，</p> <p align="center">我会遇见最好的自己，</p><p align="center">因为我在成长！</p></div><p  style="font-size:24px;color:#ff1640;float: right">致自己</p>'];
+
+
+
+
+
+var start_page = 0;
+</script>
+
+</body>
 </html>
